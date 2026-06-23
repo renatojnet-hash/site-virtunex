@@ -289,12 +289,10 @@
 
     function handleSubmit(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('button');
-      const input = e.target.querySelector('input');
-      btn.textContent = 'Obrigado!';
-      btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-      btn.disabled = true;
-      input.disabled = true;
+      const form = e.target;
+      const note = form.nextElementSibling;
+      form.innerHTML = '<p style="color:#10b981;font-size:0.95rem;font-weight:500;">Obrigado! Avisaremos você assim que estivermos no ar.</p>';
+      if (note) note.style.display = 'none';
     }
   </script>
 </body>
